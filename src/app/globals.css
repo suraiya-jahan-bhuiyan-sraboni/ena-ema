@@ -1,0 +1,64 @@
+@import "tailwindcss";
+
+@theme{
+  --breakpoint-xs: 393px;
+  --breakpoint-md: 46.5rem;
+  --breakpoint-2xl: 90rem;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: "Manrope", sans-serif;
+  --font-alt: "General Sans", sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #151E1B;
+    --foreground: #003D25;
+    --color-text-light: #F5F5F5;
+    --color-background-dark:#0A0F0D;
+    --color-card:#192420;
+    --color-primary:#1FFFA5;
+    --color-primary-dark:#002013;
+    --color-primary-light:#00E58A;
+    --color-stroke:#2A3C36;
+    --color-text-secondary-light:#B2B2B2;
+
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--color-text-light);
+  font-family: var(--font-alt);
+}
+
+h1{
+  font-family: var(--font-sans);
+}
+
+@keyframes scroll-horizontal {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-scroll-horizontal {
+  animation: scroll-horizontal 20s linear infinite;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.gradient{
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.00) 72.12%, #000 115.94%), linear-gradient(270deg, rgba(0, 0, 0, 0.00) 72.71%, #000 120.87%);
+}
